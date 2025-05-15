@@ -1,0 +1,8 @@
+site_name: Documentacion del proyecto final de fisica computacional 
+nav:
+  - Inicio: index.md
+  - Tutorial: tutorial.md
+  - Documentacion: documentacion.md
+theme:
+  name: material
+
