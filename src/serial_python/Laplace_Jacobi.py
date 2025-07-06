@@ -15,7 +15,7 @@ def segunda_derivada_x(phi):
         phi (ndarray): Matriz 2D con los valores del potencial.
 
     Returns:
-        ndarray: Segunda derivada en x, misma forma que phi.
+        (ndarray): Segunda derivada en x, misma forma que phi.
     """
     d2x = np.zeros_like(phi)
     for i in range(1, phi.shape[0] - 1):
@@ -35,7 +35,7 @@ def segunda_derivada_y(phi):
         phi (ndarray): Matriz 2D con los valores del potencial.
 
     Returns:
-        ndarray: Segunda derivada en y, misma forma que phi.
+        (ndarray): Segunda derivada en y, misma forma que phi.
     """
     d2y = np.zeros_like(phi)
     for i in range(1, phi.shape[0] - 1):
@@ -86,7 +86,7 @@ def laplace(phi):
         phi (ndarray): arreglo 2D que representa el potencial eléctrico actual.
 
     Returns:
-        ndarray: arreglo 2D actualizado del potencial luego de una iteración.
+        (ndarray): arreglo 2D actualizado del potencial luego de una iteración.
     """
 
     d2x = segunda_derivada_x(phi)
@@ -111,8 +111,8 @@ def jacobi_relaxation(N, tolerance):
         tolerance (float) : Criterio de convergencia para la diferencia máxima entre iteraciones.
 
     Returns:
-        phi (numpy.ndarray) : Arreglo 2D con los valores calculados de la función potencial en la grilla.
-        its (int) : Número de iteraciones realizadas hasta alcanzar la tolerancia.
+        phi (numpy.ndarray): Arreglo 2D con los valores calculados de la función potencial en la grilla.
+        its (int): Número de iteraciones realizadas hasta alcanzar la tolerancia.
     """
     phi = np.zeros((N + 1, N + 1), dtype=float)
     phi = condiciones_frontera(phi)

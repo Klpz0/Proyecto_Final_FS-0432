@@ -11,7 +11,7 @@ def second_derivative_x(phi):
         phi (ndarray): Matriz 2D del potencial.
 
     Returns:
-        ndarray: Segunda derivada en x.
+        (ndarray): Segunda derivada en x.
     """
     d2x = np.zeros_like(phi)
     for i in range(1, phi.shape[0] - 1):
@@ -27,7 +27,7 @@ def second_derivative_y(phi):
         phi (ndarray): Matriz 2D del potencial.
 
     Returns:
-        ndarray: Segunda derivada en y.
+        (ndarray): Segunda derivada en y.
     """
     d2y = np.zeros_like(phi)
     for i in range(1, phi.shape[0] - 1):  # Corregido rango de i
@@ -75,10 +75,9 @@ def gauss_seidel_modified(M, omega, tolerance):
         omega (float): Factor de sobre-relajación (1 ≤ omega ≤ 2)
         tolerance (float): Tolerancia para convergencia
 
-    Returns:
-        tuple: 
-            phi (ndarray): Potencial resultante
-            its (int): Número de iteraciones
+    Returns: 
+        phi (ndarray): Potencial resultante
+        its (int): Número de iteraciones
     """
     # Inicializar matriz con condiciones de frontera
     phi = np.zeros((M + 1, M + 1), dtype=float)
@@ -112,6 +111,7 @@ def gauss_seidel_modified(M, omega, tolerance):
         delta = np.max(np.abs(phi - phi_prev))
 
     return phi, its
+
 # Ejecutar simulación
 gauss_seidel, iterations = gauss_seidel_modified(100, 1.5, 1e-5)
 print(f"Iteraciones: {iterations}")
