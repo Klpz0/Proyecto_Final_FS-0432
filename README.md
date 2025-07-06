@@ -13,11 +13,22 @@ El algoritmo se ejecuta en dos pasos por iteración: primero se actualizan todos
 
 La paralelización se logra asignando a múltiples hilos la actualización de los puntos de un mismo color, lo que en entornos multicore o GPU mejora considerablemente el rendimiento. Para maximizar la eficiencia, se deben cuidar aspectos como el balance de carga, el acceso concurrente a memoria y la sincronización entre fases.
 
+<p align='center'>
+  <img src="images/Red-black.png" alt="Gráfico" width="400"/>
+  <img src="images/Speedup.png" alt="Gráfico" width="452"/>
+</p>
+
+
+
 ## Posible estrategia de paralelización en memoria distribuida
 
 Para poder implementar el paradigma de paralelización en memoria distribuida se plantea hacer uso de las celdas fantasma o también llamadas "Ghost cells” en inglés. Cuando se utilizan métodos numéricos para resolver un sistema en donde se va iterar sobre una grilla, estas ghost cells son copias locales de los datos de frontera entre valores vecinos. Dada una grilla de un tamaño NxN, esta se puede subdividir en grillas más pequeñas para poder asignar cada una de ellas a un proceso. No obstante, por la interdependencia de los datos, para actualizar sus valores en los bordes es necesario conocer los valores de los puntos de las grillas adyacentes, que pueden estar almacenados en otro proceso. Es aquí donde se implementan las celdas fantasmas, que son copias locales de estos valores para que cada proceso pueda seguir iterando y actualizando sus valores. En vez de pedir un valor cada vez, se hace una sincronización de frontera (intercambio de ghost cells) cada cierto paso.
 
 Para nuestro caso, lo más sencillo sería dividir la grilla en bandas horizontales (fila a fila), donde cada proceso manejaría un arreglo de filas locales más 2 filas fantasma, una arriba y otra abajo de forma que así se armaría su grilla loca. Si los valores de la frontera están en otro proceso, estos valores se copian en las celdas fantasma por medio de comunicación de MPI como MPI_Sendrecv. Después de cada iteración, cada proceso envía su frontera superior al proceso vecino de arriba y recibe su frontera inferior. Para detener los procesos de forma global y lograr la convergencia, cada proceso calcula su delta local y luego se usa una reducción como por ejemplo MPI_Allreduce para obtener el delta máximo global y verificar convergencia.
+
+<p align='center'>
+  <img src="images/Ghost_cells.png" alt="Gráfico" width="650"/>
+</p>
 
 # Métodos numéricos utilizados en la elaboración del proyecto:
 
