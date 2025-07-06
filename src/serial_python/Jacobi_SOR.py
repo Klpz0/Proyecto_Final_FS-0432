@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-"""Solución numérica de la ecuación de Poisson usando el método de Jacobi-SOR."""
-
 import numpy as np
 import matplotlib.pyplot as plt
 
