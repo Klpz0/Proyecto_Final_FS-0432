@@ -36,7 +36,7 @@ En la resolución del problema se hizo uso de métodos iterativos, junto con el 
 
 ## Método de relajación de Jacobi:
 
-El método de relajación de Jacobi es un proceso iterativo utilizado para resolver sistemas de ecuaciones lineales, especialmente los que provienen de la discretización de ecuaciones diferenciales, como la de Laplace. En una grilla discreta de tamaño n×nn×n, cada punto interior de la malla se actualiza en función del promedio de sus vecinos, manteniendo fijos los valores de las fronteras según las condiciones del problema. Matemáticamente se ve de la siguiente manera:
+El método de relajación de Jacobi es un proceso iterativo utilizado para resolver sistemas de ecuaciones lineales, especialmente los que provienen de la discretización de ecuaciones diferenciales, como la de Laplace. En una grilla discreta de tamaño n×n, cada punto interior de la malla se actualiza en función del promedio de sus vecinos, manteniendo fijos los valores de las fronteras según las condiciones del problema. Matemáticamente se ve de la siguiente manera:
 
 $\phi_{(x,y)} = \frac{1}{4} \cdot (\phi_{(x + a,y)} + \phi_{(x - a,y)} + \phi_{(x,y + a)} + \phi_{(x,y - a)})$
 

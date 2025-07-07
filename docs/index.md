@@ -1,17 +1,14 @@
-# Welcome to MkDocs
+# Documentación para el proyecto final de física computacional
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+En esta página se resume la documentación y funcionamiento de las implementaciones de diversos métodos numéricos para la simulación del potencial en un capacitar de placas paralelas.
 
-## Commands
+<p align='center'>
+  <img src="images/Capacitor.png" alt="Gráfico" width="650"/>
+  </p>
+##Indice de contenidos:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+###Tutorial:
+ Implementación y funcionamiento de los métodos utilizados. 
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+###Documentación:
+ Referencias de las funciones utilizadas en las distintas implementaciones.
