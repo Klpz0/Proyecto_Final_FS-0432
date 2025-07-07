@@ -1,0 +1,776 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../documentacion/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Tutorial - Documentacion del proyecto final de fisica computacional</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial-metodos-de-relajacion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Documentacion del proyecto final de fisica computacional" class="md-header__button md-logo" aria-label="Documentacion del proyecto final de fisica computacional" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentacion del proyecto final de fisica computacional
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentacion del proyecto final de fisica computacional" class="md-nav__button md-logo" aria-label="Documentacion del proyecto final de fisica computacional" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentacion del proyecto final de fisica computacional
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Tutorial
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementacion-del-metodo-de-relajacion-de-jacobi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementación del metodo de relajación de Jacobi:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementacion-del-metodo-de-relajacion-de-gauss-seidel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementación del método de relajación de Gauss-Seidel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementacion-del-metodo-de-sobre-relajacion-de-jacobi-over-relaxation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementación del método de sobre relajación de Jacobi (over-relaxation):
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementación del método de sobre relajación de Jacobi (over-relaxation):">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#causas-de-error-del-metodo-de-sobre-relajacion-de-jacobi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Causas de error del método de sobre-relajación de Jacobi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentacion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementacion-del-metodo-de-relajacion-de-jacobi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementación del metodo de relajación de Jacobi:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementacion-del-metodo-de-relajacion-de-gauss-seidel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementación del método de relajación de Gauss-Seidel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementacion-del-metodo-de-sobre-relajacion-de-jacobi-over-relaxation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementación del método de sobre relajación de Jacobi (over-relaxation):
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementación del método de sobre relajación de Jacobi (over-relaxation):">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#causas-de-error-del-metodo-de-sobre-relajacion-de-jacobi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Causas de error del método de sobre-relajación de Jacobi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tutorial-metodos-de-relajacion">Tutorial: Métodos de relajación<a class="headerlink" href="#tutorial-metodos-de-relajacion" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="implementacion-del-metodo-de-relajacion-de-jacobi">Implementación del metodo de relajación de Jacobi:<a class="headerlink" href="#implementacion-del-metodo-de-relajacion-de-jacobi" title="Permanent link">&para;</a></h2>
+<p>El método de relajación de Jacobi es un proceso iterativo utilizado para resolver sistemas de ecuaciones lineales, especialmente los que provienen de la discretización de ecuaciones diferenciales, como la de Laplace. En una grilla discreta de tamaño n×n, cada punto interior de la malla se actualiza en función del promedio de sus vecinos, manteniendo fijos los valores de las fronteras según las condiciones del problema. Matemáticamente se ve de la siguiente manera: </p>
+<p><span class="arithmatex">\(\phi_{(x,y)} = \frac{1}{4} \cdot (\phi_{(x + a,y)} + \phi_{(x - a,y)} + \phi_{(x,y + a)} + \phi_{(x,y - a)})\)</span></p>
+<p>En cada iteración se calcula una nueva matriz con los valores actualizados, sin modificar la matriz original hasta completar todo el barrido. Este enfoque facilita la implementación, ya que no hay dependencias entre los cálculos de los distintos puntos en una misma iteración, sin embargo resulta costoso computacionalmente. El proceso se detiene una vez se llega a la variación entre valores de los puntos de la grilla esté por de bajo de la tolerancia establecida en los parámetros iniciales establecidos.</p>
+<details class="note" open="open">
+<summary>Método de Jacobi</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">segunda_derivada_x</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
+    <span class="n">d2x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">d2x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">d2x</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">segunda_derivada_y</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
+    <span class="n">d2y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">d2y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">d2y</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">condiciones_frontera</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
+    <span class="n">phi</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">phi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">phi</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">phi</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="n">n_filas</span><span class="p">,</span> <span class="n">n_columnas</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">Long_x</span> <span class="o">=</span> <span class="n">n_columnas</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">Long_y</span> <span class="o">=</span> <span class="n">n_filas</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="n">electrodo_P</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">Long_x</span><span class="p">)</span>
+    <span class="n">electrodo_N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">Long_x</span><span class="p">)</span>
+    <span class="n">inicio_fila</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">Long_y</span><span class="p">)</span>
+    <span class="n">final_fila</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">Long_y</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">inicio_fila</span><span class="p">,</span> <span class="n">final_fila</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">electrodo_P</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">electrodo_N</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+    <span class="k">return</span> <span class="n">phi</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">laplace</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
+    <span class="n">d2x</span> <span class="o">=</span> <span class="n">segunda_derivada_x</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+    <span class="n">d2y</span> <span class="o">=</span> <span class="n">segunda_derivada_y</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+    <span class="n">laplaciano</span> <span class="o">=</span> <span class="n">d2x</span> <span class="o">+</span> <span class="n">d2y</span>
+
+    <span class="n">phi_new</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">phi_new</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">laplaciano</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">phi_new</span> <span class="o">=</span> <span class="n">condiciones_frontera</span><span class="p">(</span><span class="n">phi_new</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">phi_new</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">jacobi_relaxation</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">):</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">condiciones_frontera</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">its</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="n">delta</span> <span class="o">&gt;</span> <span class="n">tolerance</span><span class="p">:</span>
+        <span class="n">its</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">phi_new</span> <span class="o">=</span> <span class="n">laplace</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span> <span class="o">-</span> <span class="n">phi_new</span><span class="p">))</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">phi_new</span>
+
+    <span class="k">return</span> <span class="n">phi</span><span class="p">,</span> <span class="n">its</span>
+
+<span class="n">jacobi_vals</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="n">jacobi_relaxation</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iteraciones: </span><span class="si">{</span><span class="n">iterations</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">jacobi_vals</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Potencial φ&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="implementacion-del-metodo-de-relajacion-de-gauss-seidel">Implementación del método de relajación de Gauss-Seidel<a class="headerlink" href="#implementacion-del-metodo-de-relajacion-de-gauss-seidel" title="Permanent link">&para;</a></h2>
+<p>El método de Gauss-Seidel es una optimización del método iterativo de Jacobi que permite una convergencia más rápida al actualizar los valores directamente en la misma memoria durante cada iteración. A diferencia de Jacobi, que calcula los nuevos valores sin modificar los anteriores hasta completar toda la grilla, Gauss-Seidel reutiliza inmediatamente los valores recién actualizados, lo que reduce el número de iteraciones necesarias para alcanzar la convergencia. El esquema básico de actualización para resolver la ecuación de Laplace por diferencias finitas centrales es:</p>
+<p><span class="arithmatex">\(\phi_{(x,y)} = \frac{1}{4} \cdot (\phi_{(x + a,y)} + \phi_{(x - a,y)} + \phi_{(x,y + a)} + \phi_{(x,y - a)})\)</span></p>
+<p>En este método, los valores actualizados se escriben directamente sobre la matriz original, lo que introduce una dependencia entre los cálculos dentro de la misma iteración, dificultando su paralelización directa. Sin embargo, este enfoque reduce el uso de memoria y tiende a converger más rápidamente que Jacobi.</p>
+<details class="note" open="open">
+<summary>Método de Gauss-Seidel</summary>
+<p>```python
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<p>def condiciones_frontera(phi):
+    phi[0, :] = 0.0
+    phi[-1, :] = 0.0
+    phi[:, 0] = 0.0
+    phi[:, -1] = 0.0</p>
+<div class="highlight"><pre><span></span><code>n_filas, n_columnas = phi.shape
+Long_x = n_columnas - 1
+Long_y = n_filas - 1
+
+electrodo_P = int(round(0.2 * Long_x))
+electrodo_N = int(round(0.8 * Long_x))
+inicio_fila = int(round(0.2 * Long_y))
+final_fila = int(round(0.8 * Long_y))
+
+for i in range(inicio_fila, final_fila + 1):
+    phi[i, electrodo_P] = 1.0
+    phi[i, electrodo_N] = -1.0
+
+return phi
+</code></pre></div>
+<p>def gauss_seidel_modified(M, omega, tolerance):
+    phi = np.zeros((M + 1, M + 1), dtype=float)
+    phi = condiciones_frontera(phi)</p>
+<div class="highlight"><pre><span></span><code>delta = 1.0
+its = 0
+
+while delta &gt; tolerance:
+    its += 1
+    phi_prev = phi.copy()
+
+    for i in range(1, M):
+        for j in range(1, M):
+            new_val = 0.25 * (
+                phi[i+1, j] + phi[i-1, j] + 
+                phi[i, j+1] + phi[i, j-1]
+            )
+            phi[i, j] = (1 - omega) * phi[i, j] + omega * new_val
+
+    phi = condiciones_frontera(phi)
+    delta = np.max(np.abs(phi - phi_prev))
+
+return phi, its
+</code></pre></div>
+<p>gauss_seidel, iterations = gauss_seidel_modified(100, 1.5, 1e-5)
+print(f"Iteraciones: {iterations}")</p>
+<p>plt.figure(figsize=(8, 6))
+plt.imshow(gauss_seidel, origin="lower", cmap='jet')
+plt.colorbar(label="Potencial φ")
+plt.title("Solución Gauss-Seidel de la Ecuación de Laplace")
+plt.xlabel("Posición X")
+plt.ylabel("Posición Y")
+plt.show()
+`````</p>
+</details>
+<hr />
+<h2 id="implementacion-del-metodo-de-sobre-relajacion-de-jacobi-over-relaxation">Implementación del método de sobre relajación de Jacobi (over-relaxation):<a class="headerlink" href="#implementacion-del-metodo-de-sobre-relajacion-de-jacobi-over-relaxation" title="Permanent link">&para;</a></h2>
+<p>Una forma de acelerar la convergencia del método de Jacobi es mediante el método de Jacobi modificado, que incrementa el tamaño del paso en cada iteración mediante un parámetro <span class="arithmatex">\(\omega\)</span>. En lugar de avanzar poco a poco, se ajusta la actualización de <span class="arithmatex">\(\phi\)</span> para hacer pasos más grandes, lo que puede reducir el número de iteraciones necesarias para aproximar la solución. La actualización se define como:</p>
+<p><span class="arithmatex">\(\phi'(x, y) = (1+\omega) \cdot \left[\frac{1}{4} \cdot (\phi(x + a, y) + \phi(x - a, y) + \phi(x, y + a) + \phi(x, y - a))\right] - \omega \phi(x, y)\)</span></p>
+<p>Sin embargo, esta técnica no siempre es estable; la elección adecuada del parámetro ωω es crucial y suele depender del problema específico para garantizar estabilidad y mejorar la velocidad de convergencia.</p>
+<h4 id="causas-de-error-del-metodo-de-sobre-relajacion-de-jacobi">Causas de error del método de sobre-relajación de Jacobi<a class="headerlink" href="#causas-de-error-del-metodo-de-sobre-relajacion-de-jacobi" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+\phi'(x, y) = \frac{1}{4} \left[ (\omega + 1) \left( \phi(x + a, y) + \phi(x - a, y) + \phi(x, y + a) + \phi(x, y - a) \right) - \omega\phi(x, y) \right]
+\]</div>
+<p>Este método incluye un término <span class="arithmatex">\(\omega\)</span> que ayuda a acelerar la convergencia del mismo. Este método numérico no es útil para resolver el problema del capacitor y se debe a dos factores:</p>
+<ol>
+<li>Radio espectral de la matriz de iteración <span class="arithmatex">\(M\)</span>  </li>
+<li>Número de condición de la matriz <span class="arithmatex">\(A\)</span>  </li>
+</ol>
+<p>Dado un sistema de la forma <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span>, donde <span class="arithmatex">\(A\)</span> es una matriz, <span class="arithmatex">\(\mathbf{x}\)</span> el vector de incógnitas y <span class="arithmatex">\(\mathbf{b}\)</span> el vector solución, es posible implementar un método iterativo como Jacobi o Gauss-Seidel. No obstante, estos métodos dependen del radio espectral de su matriz de iteración, de forma que la convergencia ocurre si y sólo si:</p>
+<div class="arithmatex">\[
+\text{Convergencia} \iff \rho(M) &lt; 1
+\]</div>
+<p>(Donde <span class="arithmatex">\(\rho(M)\)</span> es una medida de la rapidez para corregir errores y converger).</p>
+<p>La matriz <span class="arithmatex">\(M\)</span> se define como la descomposición de la matriz <span class="arithmatex">\(A\)</span> del sistema inicial y depende de cada método:</p>
+<ul>
+<li>
+<p>Jacobi:<br />
+<span class="arithmatex">\(M = D^{-1}(L + U)\)</span></p>
+</li>
+<li>
+<p>Gauss-Seidel:<br />
+<span class="arithmatex">\(M = (D - L)^{-1}U\)</span></p>
+</li>
+<li>
+<p>SOR (Relajación Sucesiva):<br />
+<span class="arithmatex">\(M = [D - \omega L]^{-1} [(1 - \omega)D + \omega U]\)</span></p>
+</li>
+</ul>
+<p>El radio espectral de <span class="arithmatex">\(M\)</span> es el máximo valor absoluto de sus valores propios.</p>
+<p>Por otra parte, el número de condición de la matriz <span class="arithmatex">\(A\)</span> mide qué tan bien condicionada está. Si <span class="arithmatex">\(k(A) \gg 1\)</span>, la matriz es sensible a perturbaciones y se dice "mal condicionada", generando errores en la solución. Se define como:</p>
+<div class="arithmatex">\[
+k(A) = \| A \| \cdot \| A^T \|
+\]</div>
+<p>Un sistema mal condicionado es numéricamente inestable. Si <span class="arithmatex">\(A\)</span> está mal condicionada, la estructura de <span class="arithmatex">\(M\)</span> hereda esta dificultad y su radio espectral tiende a ser mayor, impidiendo la convergencia.</p>
+<p>Explicación de la no convergencia en nuestro problema:<br />
+El método de Jacobi modificado no converge debido a que la matriz de coeficientes <span class="arithmatex">\(A\)</span> está mal condicionada, con un número de condición del orden de <span class="arithmatex">\(10^3\)</span>.</p>
+<details class="note" open="open">
+<summary>SOR Jacobi</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">condiciones_frontera</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Aplica condiciones de frontera según el diagrama:</span>
+<span class="sd">    - Bordes a 0 V</span>
+<span class="sd">    - Electrodo izquierdo a +1 V</span>
+<span class="sd">    - Electrodo derecho a -1 V</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        phi (ndarray): Matriz 2D del potencial eléctrico.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (ndarray): Matriz con condiciones de frontera aplicada.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">phi</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">phi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">phi</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">phi</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="n">n_filas</span><span class="p">,</span> <span class="n">n_columnas</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">Long_x</span> <span class="o">=</span> <span class="n">n_columnas</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">Long_y</span> <span class="o">=</span> <span class="n">n_filas</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="n">electrodo_P</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">Long_x</span><span class="p">)</span>
+    <span class="n">electrodo_N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">Long_x</span><span class="p">)</span>
+    <span class="n">inicio_fila</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">Long_y</span><span class="p">)</span>
+    <span class="n">final_fila</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">Long_y</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">inicio_fila</span><span class="p">,</span> <span class="n">final_fila</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">electrodo_P</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">electrodo_N</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+
+    <span class="k">return</span> <span class="n">phi</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">laplace_jacobi_sor</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">omega</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Realiza una iteración del método de Jacobi con sobre-relajación (SOR)</span>
+<span class="sd">    para resolver la ecuación de Laplace (sin término fuente).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        phi (ndarray): Matriz 2D actual del potencial.</span>
+<span class="sd">        omega (float): Factor de sobre-relajación (1 &lt; omega &lt; 2).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (ndarray): Matriz actualizada del potencial tras una iteración.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">phi_new</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">phi_est</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span>
+                <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span>
+                <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">phi_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">omega</span><span class="p">)</span> <span class="o">*</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">phi_est</span>
+
+    <span class="n">phi_new</span> <span class="o">=</span> <span class="n">condiciones_frontera</span><span class="p">(</span><span class="n">phi_new</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">phi_new</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">jacobi_sor_relaxation</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">,</span> <span class="n">omega</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Ejecuta el método de Jacobi-SOR para resolver la ecuación de Laplace</span>
+<span class="sd">    en una grilla bidimensional de tamaño (N+1) x (N+1).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        N (int): Tamaño de la grilla (produce una grilla de (N+1) × (N+1))</span>
+<span class="sd">        tolerance (float): Criterio de convergencia.</span>
+<span class="sd">        omega (float): Factor de sobre-relajación (1 &lt; omega &lt; 2)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        phi (ndarray): Solución final del potencial eléctrico.</span>
+<span class="sd">        its (int): Número de iteraciones realizadas.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">condiciones_frontera</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">its</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="n">delta</span> <span class="o">&gt;</span> <span class="n">tolerance</span><span class="p">:</span>
+        <span class="n">its</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">phi_new</span> <span class="o">=</span> <span class="n">laplace_jacobi_sor</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">omega</span><span class="p">)</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span> <span class="o">-</span> <span class="n">phi_new</span><span class="p">))</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">phi_new</span>
+
+    <span class="k">return</span> <span class="n">phi</span><span class="p">,</span> <span class="n">its</span>
+
+
+<span class="c1"># Parámetros y ejecución</span>
+<span class="n">jacobi_vals</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="n">jacobi_sor_relaxation</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="mf">1.8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iteraciones: </span><span class="si">{</span><span class="n">iterations</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualización</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">jacobi_vals</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Potencial φ&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Solución de la ecuación de Laplace con Jacobi-SOR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
