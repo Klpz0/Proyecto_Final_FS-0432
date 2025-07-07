@@ -8,7 +8,7 @@ El método de relajación de Jacobi es un proceso iterativo utilizado para resol
 
 $\phi_{(x,y)} = \frac{1}{4} \cdot (\phi_{(x + a,y)} + \phi_{(x - a,y)} + \phi_{(x,y + a)} + \phi_{(x,y - a)})$
   
-En cada iteración se calcula una nueva matriz con los valores actualizados, sin modificar la matriz original hasta completar todo el barrido. Este enfoque facilita la implementación, ya que no hay dependencias entre los cálculos de los distintos puntos en una misma iteración, sin embargo resulta costoso computacionalmente. El proceso se detiene una vez se llega a la variación entre valores de los puntos de la grilla esté por de bajo de la tolerancia establecida en los parámetros iniciales establecidos.
+En cada iteración se calcula una nueva matriz con los valores actualizados, sin modificar la matriz original hasta completar todo el barrido. Este enfoque facilita la implementación, ya que no hay dependencias entre los cálculos de los distintos puntos en una misma iteración, sin embargo, resulta costoso computacionalmente. El proceso se detiene una vez se llega a la variación entre valores de los puntos de la grilla estén por de bajo de la tolerancia establecida en los parámetros iniciales establecidos.
 
 ???+ note "Método de Jacobi"
 
@@ -153,7 +153,7 @@ En este método, los valores actualizados se escriben directamente sobre la matr
     plt.xlabel("Posición X")
     plt.ylabel("Posición Y")
     plt.show()
-    `````
+    ```
 ---
 
 ## Implementación del método de sobre relajación de Jacobi (over-relaxation):
@@ -162,7 +162,7 @@ Una forma de acelerar la convergencia del método de Jacobi es mediante el méto
 
 $\phi'(x, y) = (1+\omega) \cdot \left[\frac{1}{4} \cdot (\phi(x + a, y) + \phi(x - a, y) + \phi(x, y + a) + \phi(x, y - a))\right] - \omega \phi(x, y)$
 
-Sin embargo, esta técnica no siempre es estable; la elección adecuada del parámetro ωω es crucial y suele depender del problema específico para garantizar estabilidad y mejorar la velocidad de convergencia.
+Sin embargo, esta técnica no siempre es estable; la elección adecuada del parámetro $\omega$ es crucial y suele depender del problema específico para garantizar estabilidad y mejorar la velocidad de convergencia.
 
 #### Causas de error del método de sobre-relajación de Jacobi
 
